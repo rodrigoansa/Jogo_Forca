@@ -1,6 +1,9 @@
 import os
+with open('palavras.txt') as arquivo:
+    linhas = arquivo.read()
+    lista_palavras =  
 
-palavra = 'capricornio'
+palavra = 'dado'
 acertos = 0
 erros = 0
 tracos = '_ ' * len(palavra)
@@ -76,10 +79,10 @@ while acertos != len(palavra) and erros < 7:
     if letra in palavra:
         os.system("clear")
         letras_acertadas += letra + ' '
-        acertos += 1        
+        acertos += 1
+               
     else:
         letras_erradas += letra + ' '
         erros += 1
         print('Você Perdeu.')
 
-print('Você venceu!')
