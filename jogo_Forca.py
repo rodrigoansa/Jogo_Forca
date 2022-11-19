@@ -1,9 +1,13 @@
 import os
+import time
+from random import choice
+
 with open('palavras.txt') as arquivo:
     linhas = arquivo.read()
-    lista_palavras =  
+    lista_palavras = linhas.split('\n')
 
-palavra = 'dado'
+
+palavra = choice(lista_palavras).upper()
 acertos = 0
 erros = 0
 tracos = '_ ' * len(palavra)
@@ -14,12 +18,10 @@ forca = """
 ----|
     |    
     """
-
 nada = """
 
 
 """
-
 cabeca = """
     O
 """
@@ -71,18 +73,26 @@ while acertos != len(palavra) and erros < 7:
     print(f'A palavra contém: {len(palavra)} Letras')
     print(mostrar_letra)
     print(forca+chances[erros])
+    print(f'Letras Acertadas: {letras_acertadas}')
     print(f'Letras Erradas: {letras_erradas}')
 
 
-    letra = input('Digite uma letra: ')
+    letra = input('Digite uma letra: ').upper()
+
+    if letra in letras_acertadas+letras_erradas:
+        print('Você já tentou essa letra')
+        time.sleep(2)
+        continue
     
     if letra in palavra:
         os.system("clear")
         letras_acertadas += letra + ' '
-        acertos += 1
+        acertos += palavra.count(letra)
+        print('Você Venceu!')
                
     else:
         letras_erradas += letra + ' '
         erros += 1
         print('Você Perdeu.')
+        print(f'A palavra é: {palavra}')
 
