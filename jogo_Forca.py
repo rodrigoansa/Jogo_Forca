@@ -89,6 +89,7 @@ while acertos != len(palavra) and erros < 7:
         letras_acertadas += letra + ' '
         acertos += palavra.count(letra)
         print('Você Venceu!')
+        print(f'A palavra é: {palavra}')
                
     else:
         letras_erradas += letra + ' '
