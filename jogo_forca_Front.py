@@ -1,12 +1,19 @@
 import tkinter as tk
+from tkinter import *
 import os
 import time
 from random import choice
+
+pastaApp = os.path.dirname(__file__)
 
 window = tk.Tk()
 window.title('Jogo da Forca')
 window.geometry('360x640+1080+400')
 window.resizable(False, False)
+
+bg = PhotoImage(file=pastaApp+"\\bg.gif")
+l_bg = Label(window,image=bg)
+l_bg.place()
 
 window.mainloop()
 
