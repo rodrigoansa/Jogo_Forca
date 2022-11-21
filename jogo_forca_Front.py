@@ -4,16 +4,47 @@ import os
 import time
 from random import choice
 
-pastaApp = os.path.dirname(__file__)
 
 window = tk.Tk()
 window.title('Jogo da Forca')
 window.geometry('360x640+1080+400')
 window.resizable(False, False)
 
-bg = PhotoImage(file=pastaApp+"\\bg.gif")
-l_bg = Label(window,image=bg)
-l_bg.place()
+#Importação das imagens
+def forca():
+    forca = PhotoImage(file="imagens/forca.png")
+    label_forca = Label(window, image=forca)
+    label_forca.place(x=0, y=0, relwidth=1, relheight=1)
+
+def cabeca():
+    cabeca = PhotoImage(file="imagens/cabeca.png")
+    label_cabeca = Label(window, image=cabeca)
+    label_cabeca.place(x=0, y=0, relwidth=1, relheight=1)
+
+def corpo():
+    corpo = PhotoImage(file="imagens/corpo.png")
+    label_corpo = Label(window, image=corpo)
+    label_corpo.place(x=0, y=0, relwidth=1, relheight=1)
+
+def braco_esq():
+    braco_esq = PhotoImage(file="imagens/braco_esq.png")
+    label_braco_esq = Label(window, image=braco_esq)
+    label_braco_esq.place(x=0, y=0, relwidth=1, relheight=1)
+
+def braco_dir():
+    braco_dir = PhotoImage(file="imagens/braco_dir.png")
+    label_braco_dir = Label(window, image=braco_dir)
+    label_braco_dir.place(x=0, y=0, relwidth=1, relheight=1)
+
+def perna_esq():
+    perna_esq = PhotoImage(file="imagens/perna_esq.png")
+    label_perna_esq = Label(window, image=perna_esq)
+    label_perna_esq.place(x=0, y=0, relwidth=1, relheight=1)
+
+def perna_dir():
+    perna_dir = PhotoImage(file="imagens/perna_dir.png")
+    label_perna_dir = Label(window, image=perna_dir)
+    label_perna_dir.place(x=0, y=0, relwidth=1, relheight=1)
 
 window.mainloop()
 
