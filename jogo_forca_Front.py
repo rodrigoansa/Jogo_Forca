@@ -1,14 +1,17 @@
-import tkinter as tk
 from tkinter import *
 import os
 import time
 from random import choice
 
 
-window = tk.Tk()
+window = Tk()
 window.title('Jogo da Forca')
 window.geometry('360x640+1080+400')
 window.resizable(False, False)
+
+#textos
+texto_contem = Label(window, text = 'A palavra contém:   Letras')
+texto_contem.grid(column=1, row=5)
 
 #Importação das imagens
 def forca():
@@ -46,7 +49,7 @@ def perna_dir():
     label_perna_dir = Label(window, image=perna_dir)
     label_perna_dir.place(x=0, y=0, relwidth=1, relheight=1)
 
-window.mainloop()
+
 
 with open('palavras.txt') as arquivo:
     linhas = arquivo.read()
@@ -60,54 +63,20 @@ tracos = '_ ' * len(palavra)
 letras_acertadas = ''
 letras_erradas = ''
 
-forca = """
-----|
-    |    
-    """
-nada = """
-
-
-"""
-cabeca = """
-    O
-"""
-corpo = """
-    O
-    |
-"""
-braco_esq = """
-    O
-    |\\
-"""
-braco_dir = """
-    O
-   /|\\
-"""
-perna_esq = """
-    O
-   /|\\
-     \\
-"""
-perna_dir = """
-    O
-   /|\\
-   / \\
-"""
-
 
 chances = [
-    nada,
-    cabeca,
-    corpo,
-    braco_esq,
-    braco_dir,
-    perna_esq,
-    perna_dir,
+    forca(),
+    cabeca(),
+    corpo(),
+    braco_esq(),
+    braco_dir(),
+    perna_esq(),
+    perna_dir(),
 ]
 
 
 while acertos != len(palavra) and erros < 7:
-
+    
     mostrar_letra = ''
     for letra  in palavra:
         os.system("clear")
@@ -118,7 +87,7 @@ while acertos != len(palavra) and erros < 7:
     
     print(f'A palavra contém: {len(palavra)} Letras')
     print(mostrar_letra)
-    print(forca+chances[erros])
+    #forca()#+chances[erros]
     print(f'Letras Acertadas: {letras_acertadas}')
     print(f'Letras Erradas: {letras_erradas}')
 
@@ -143,3 +112,4 @@ while acertos != len(palavra) and erros < 7:
         print('Você Perdeu.')
         print(f'A palavra é: {palavra}')
 
+window.mainloop()
