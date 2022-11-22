@@ -9,15 +9,27 @@ window.title('Jogo da Forca')
 window.geometry('360x640+1080+400')
 window.resizable(False, False)
 
-#textos
-texto_contem = Label(window, text = 'A palavra contém:   Letras')
-texto_contem.grid(column=1, row=5)
 
+
+#texto_contem.grid(column=1, row=5)
+
+forca = PhotoImage(file="imagens/forca.png")
+label_forca = Label(window, image=forca)
+label_forca.place(x=0, y=0, relwidth=1, relheight=1)
+
+#textos
+texto_contem = Label(window, font = ("Arial Black", 13), text = 'A palavra contém:   Letras', background='white')
+texto_contem.place(x=85, y=340)
+
+texto_acertadas = Label(window, font = ("Arial Black", 13), text = 'Acertadas:', background='white')
+texto_acertadas.place(x=5, y=440)
+
+texto_erradas = Label(window, font = ("Arial Black", 13), text = 'Erradas:', background='white')
+texto_erradas.place(x=5, y=465)
+
+window.mainloop()
 #Importação das imagens
-def forca():
-    forca = PhotoImage(file="imagens/forca.png")
-    label_forca = Label(window, image=forca)
-    label_forca.place(x=0, y=0, relwidth=1, relheight=1)
+
 
 def cabeca():
     cabeca = PhotoImage(file="imagens/cabeca.png")
@@ -112,4 +124,3 @@ while acertos != len(palavra) and erros < 7:
         print('Você Perdeu.')
         print(f'A palavra é: {palavra}')
 
-window.mainloop()
