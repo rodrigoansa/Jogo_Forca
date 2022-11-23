@@ -8,6 +8,7 @@ window = Tk()
 window.title('Jogo da Forca')
 window.geometry('360x640+1080+400')
 window.resizable(False, False)
+window.wm_attributes('-transparentcolor', '#ab23ff')
 
 
 
@@ -18,13 +19,13 @@ label_forca = Label(window, image=forca)
 label_forca.place(x=0, y=0, relwidth=1, relheight=1)
 
 #textos
-texto_contem = Label(window, font = ("Arial Black", 13), text = 'A palavra contém:   Letras', background='white')
+texto_contem = Label(window, font = ("Arial Black", 13), text = 'A palavra contém:   Letras', bg='#ab23ff')
 texto_contem.place(x=85, y=340)
 
-texto_acertadas = Label(window, font = ("Arial Black", 13), text = 'Acertadas:', background='white')
+texto_acertadas = Label(window, font = ("Arial Black", 13), text = 'Acertadas:', bg='#ab23ff')
 texto_acertadas.place(x=5, y=440)
 
-texto_erradas = Label(window, font = ("Arial Black", 13), text = 'Erradas:', background='white')
+texto_erradas = Label(window, font = ("Arial Black", 13), text = 'Erradas:', bg='#ab23ff')
 texto_erradas.place(x=5, y=465)
 
 window.mainloop()
