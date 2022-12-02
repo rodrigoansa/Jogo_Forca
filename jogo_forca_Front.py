@@ -64,6 +64,7 @@ def perna_dir():
     label_perna_di = Label(window, image=perna_di)
     label_perna_di.place(relwidth=1, relheight=1)
 
+
 chances = [
     inicio,
     cabeca,
@@ -73,6 +74,7 @@ chances = [
     perna_esq,
     perna_dir,
 ]
+
 
 while acertos != len(palavra) and erros < 7:
     
